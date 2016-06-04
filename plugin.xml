@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="no.sport1.rfid-cordova-plugin"
+    id="rfid-cordova-plugin"
     version="0.3">
     <name>Rfid-cordova-plugin</name>
     <description>RFID Android plugin for Cordova.</description>
     <license>Apache 2.0</license>
     <keywords>cordova,rfid</keywords>
-    <repo>https://github.com/Cangit/rfidcordovaplugin.git</repo>
+    <repo>https://github.com/Cangit/rfidcordovaplugin.git#19dd0e65d08fdc2793aa419f7c85d41783009274</repo>
     <issue></issue>
 
     <js-module src="www/rfid-cordova-plugin.js" name="rfid-cordova-plugin">

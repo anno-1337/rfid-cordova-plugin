@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="rfid-cordova-plugin"
-    version="0.3">
-    <name>Rfid-cordova-plugin</name>
+    id="rfidcordovaplugin"
+    version="0.4">
+    <name>rfidcordovaplugin</name>
     <description>RFID Android plugin for Cordova.</description>
     <license>Apache 2.0</license>
     <keywords>cordova,rfid</keywords>
     <repo>https://github.com/Cangit/rfidcordovaplugin.git#19dd0e65d08fdc2793aa419f7c85d41783009274</repo>
     <issue></issue>
 
-    <js-module src="www/rfid-cordova-plugin.js" name="rfid-cordova-plugin">
-        <clobbers target="rfid-cordova-plugin" />
+    <js-module src="www/rfidcordovaplugin.js" name="rfidcordovaplugin">
+        <clobbers target="rfidcordovaplugin" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="rfid-cordova-plugin" >
-                <param name="android-package" value="rfid-cordova-plugin"/>
+            <feature name="rfidcordovaplugin" >
+                <param name="android-package" value="rfidcordovaplugin"/>
             </feature>
         </config-file>
-        <source-file src="src/android/rfid-cordova-plugin.java" target-dir="src/" />
+        <source-file src="src/android/rfidcordovaplugin.java" target-dir="src/" />
     </platform>
 </plugin>

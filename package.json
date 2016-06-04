@@ -4,7 +4,7 @@
     "cordova_name": "rfid-cordova-plugin",
     "description": "RFID Android Cordova Plugin",
     "license": "Apache 2.0",
-    "repo": "",
+    "repo": "https://github.com/Cangit/rfidcordovaplugin.git",
     "issue": "",
     "keywords": [
         "cordova",

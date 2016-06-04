@@ -7,7 +7,7 @@
     <description>RFID Android plugin for Cordova.</description>
     <license>Apache 2.0</license>
     <keywords>cordova,rfid</keywords>
-    <repo></repo>
+    <repo>https://github.com/Cangit/rfidcordovaplugin.git</repo>
     <issue></issue>
 
     <js-module src="www/rfid-cordova-plugin.js" name="rfid-cordova-plugin">

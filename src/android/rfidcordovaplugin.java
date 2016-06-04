@@ -9,7 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class CoolPlugin extends CordovaPlugin {
+public class rfidcordovaplugin extends CordovaPlugin {
 
   public static final String TAG = "rfidcordovaplugin";
 

@@ -1,10 +1,10 @@
 var exec = require('cordova/exec');
 
-function CoolPlugin() {
+function rfidcordovaplugin() {
  console.log("CoolPlugin.js: is created");
 }
 
-CoolPlugin.prototype.showToast = function(aString){
+rfidcordovaplugin.prototype.showToast = function(aString){
  console.log("CoolPlugin.js: showToast");
 
  exec(function(result){
@@ -12,8 +12,8 @@ CoolPlugin.prototype.showToast = function(aString){
    },
   function(result){
     /*alert("Error" + reply);*/
-   },"CoolPlugin",aString,[]);
+  },"rfidcordovaplugin",aString,[]);
 }
 
- var coolPlugin = new CoolPlugin();
- module.exports = coolPlugin;
+ var rfidcordovaplugin = new rfidcordovaplugin();
+ module.exports = rfidcordovaplugin;

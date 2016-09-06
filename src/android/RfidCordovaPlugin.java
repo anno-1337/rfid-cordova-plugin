@@ -2,9 +2,13 @@ import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaInterface;
+import android.content.Intent;
+import android.nfc.Tag;
+import android.nfc.NfcAdapter;
 import android.util.Log;
 import android.provider.Settings;
 import android.widget.Toast;
+import android.content.Context;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,19 +36,16 @@ public class RfidCordovaPlugin extends CordovaPlugin {
   }
 
   public boolean execute(final String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-
-    final int duration = Toast.LENGTH_SHORT;
-    // Shows a toast
     Log.v(TAG,"RfidCordovaPlugin received:"+ action);
-
-
     cordova.getActivity().runOnUiThread(new Runnable() {
       public void run() {
-        Toast toast = Toast.makeText(cordova.getActivity().getApplicationContext(), action, duration);
-        toast.show();
+        Toast.makeText(cordova.getActivity().getApplicationContext(), action, Toast.LENGTH_SHORT).show();
+        showNFCStatus();
+        readRFID();
       }
     });
-
     return true;
   }
+
+
 }

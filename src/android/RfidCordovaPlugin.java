@@ -9,9 +9,27 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.zebra.rfid.api3.ACCESS_OPERATION_CODE;
+import com.zebra.rfid.api3.ACCESS_OPERATION_STATUS;
+import com.zebra.rfid.api3.BEEPER_VOLUME;
+import com.zebra.rfid.api3.InvalidUsageException;
+import com.zebra.rfid.api3.OperationFailureException;
+import com.zebra.rfid.api3.RFIDReader;
+import com.zebra.rfid.api3.ReaderDevice;
+import com.zebra.rfid.api3.Readers;
+import com.zebra.rfid.api3.RfidEventsListener;
+import com.zebra.rfid.api3.RfidReadEvents;
+import com.zebra.rfid.api3.RfidStatusEvents;
+import com.zebra.rfid.api3.TAG_FIELD;
+import com.zebra.rfid.api3.TagData;
+import com.zebra.rfid.api3.TagStorageSettings;
+
+import java.util.ArrayList;
+
 public class RfidCordovaPlugin extends CordovaPlugin {
 
   public static final String TAG = "RfidCordovaPlugin";
+  public static RFIDReader reader;
 
   /**
   * Constructor.
@@ -35,13 +53,15 @@ public class RfidCordovaPlugin extends CordovaPlugin {
 
     final int duration = Toast.LENGTH_SHORT;
     // Shows a toast
-    Log.v(TAG,"RfidCordovaPlugin received:"+ action);
+    Log.i(TAG,"RFIDCORDOVAPLUGIN RECIEVED ACTION: !!!!!!!!!!!!!!!!!!!!!!"+ action);
 
 
     cordova.getActivity().runOnUiThread(new Runnable() {
       public void run() {
-        Toast toast = Toast.makeText(cordova.getActivity().getApplicationContext(), action, duration);
-        toast.show();
+        // Toast toast = Toast.makeText(cordova.getActivity().getApplicationContext(), action, duration);
+        // toast.show();
+        Log.i(TAG, "INSIDE RUNNABLE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        connectToReader();
       }
     });
 
@@ -49,7 +69,7 @@ public class RfidCordovaPlugin extends CordovaPlugin {
   }
 
   public void connectToReader() {
-      Log.v(TAG,  "Connecting to reader..");
+      Log.i(TAG, "CONNECTING TO READER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         try {
             Readers readers = new Readers();
             ArrayList<ReaderDevice> deviceArrayList = readers.GetAvailableRFIDReaderList();
@@ -58,8 +78,10 @@ public class RfidCordovaPlugin extends CordovaPlugin {
             reader.connect();
             reader.Config.setBeeperVolume(BEEPER_VOLUME.QUIET_BEEP);
             reader.Config.saveConfig();
-        } catch (InvalidUsageException | OperationFailureException e) {
+        } catch (InvalidUsageException e) {
+            e.printStackTrace();
+        } catch (OperationFailureException e) {
             e.printStackTrace();
         }
-  }
+    }
 }

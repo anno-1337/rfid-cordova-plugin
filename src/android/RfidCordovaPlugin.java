@@ -47,4 +47,19 @@ public class RfidCordovaPlugin extends CordovaPlugin {
 
     return true;
   }
+
+  public void connectToReader() {
+      Log.v(TAG,  "Connecting to reader..");
+        try {
+            Readers readers = new Readers();
+            ArrayList<ReaderDevice> deviceArrayList = readers.GetAvailableRFIDReaderList();
+            ReaderDevice readerDevice = deviceArrayList.get(0);
+            reader = readerDevice.getRFIDReader();
+            reader.connect();
+            reader.Config.setBeeperVolume(BEEPER_VOLUME.QUIET_BEEP);
+            reader.Config.saveConfig();
+        } catch (InvalidUsageException | OperationFailureException e) {
+            e.printStackTrace();
+        }
+  }
 }

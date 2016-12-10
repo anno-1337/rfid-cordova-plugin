@@ -22,5 +22,6 @@
             </feature>
         </config-file>
         <source-file src="src/android/RfidCordovaPlugin.java" target-dir="src/" />
+        <source-file src="src/RFIDAPaI3Library/RFIDAPI3Library.jar" target-dir="libs/" />
     </platform>
 </plugin>

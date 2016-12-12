@@ -61,7 +61,6 @@ public class RfidCordovaPlugin extends CordovaPlugin {
         // Toast toast = Toast.makeText(cordova.getActivity().getApplicationContext(), action, duration);
         // toast.show();
         Log.i(TAG, "Inside runnable");
-        checkAndRequestPermissions();
         connectToReader();
       }
     });

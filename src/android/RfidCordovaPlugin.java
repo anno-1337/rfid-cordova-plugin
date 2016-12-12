@@ -53,14 +53,15 @@ public class RfidCordovaPlugin extends CordovaPlugin {
 
     final int duration = Toast.LENGTH_SHORT;
     // Shows a toast
-    Log.i(TAG,"RFIDCORDOVAPLUGIN RECIEVED ACTION: !!!!!!!!!!!!!!!!!!!!!!"+ action);
+    Log.i(TAG,"Rfid cordova plugin recieved action: "+ action);
 
 
     cordova.getActivity().runOnUiThread(new Runnable() {
       public void run() {
         // Toast toast = Toast.makeText(cordova.getActivity().getApplicationContext(), action, duration);
         // toast.show();
-        Log.i(TAG, "INSIDE RUNNABLE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        Log.i(TAG, "Inside runnable");
+        checkAndRequestPermissions();
         connectToReader();
       }
     });
@@ -68,8 +69,8 @@ public class RfidCordovaPlugin extends CordovaPlugin {
     return true;
   }
 
-  public void connectToReader() {
-      Log.i(TAG, "CONNECTING TO READER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  private void connectToReader() {
+      Log.i(TAG, "Connecting to reader");
         try {
             Readers readers = new Readers();
             ArrayList<ReaderDevice> deviceArrayList = readers.GetAvailableRFIDReaderList();

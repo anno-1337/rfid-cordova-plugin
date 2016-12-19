@@ -1,10 +1,10 @@
 {
-    "version": "0.4",
+    "version": "0.0.1",
     "name": "RfidCordovaPlugin",
     "cordova_name": "RfidCordovaPlugin",
     "description": "RFID Android Cordova Plugin",
     "license": "Apache 2.0",
-    "repo": "https://github.com/anno-1337/rfid-cordova-plugin.git",
+    "repository": "https://github.com/anno-1337/rfid-cordova-plugin.git",
     "issue": "",
     "keywords": [
         "cordova",

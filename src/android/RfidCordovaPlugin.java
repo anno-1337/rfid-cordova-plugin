@@ -2,9 +2,11 @@ import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaInterface;
+
 import android.util.Log;
 import android.provider.Settings;
 import android.widget.Toast;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,48 +30,47 @@ import java.util.ArrayList;
 
 public class RfidCordovaPlugin extends CordovaPlugin {
 
-  public static final String TAG = "RfidCordovaPlugin";
-  public static RFIDReader reader;
+    public static final String TAG = "RfidCordovaPlugin";
+    public static RFIDReader reader;
 
-  /**
-  * Constructor.
-  */
-  public RfidCordovaPlugin() {}
+    /**
+     * Constructor.
+     */
+    public RfidCordovaPlugin() {
+    }
 
-  /**
-  * Sets the context of the Command. This can then be used to do things like
-  * get file paths associated with the Activity.
-  *
-  * @param cordova The context of the main Activity.
-  * @param webView The CordovaWebView Cordova is running in.
-  */
+    /**
+     * Sets the context of the Command. This can then be used to do things like
+     * get file paths associated with the Activity.
+     *
+     * @param cordova The context of the main Activity.
+     * @param webView The CordovaWebView Cordova is running in.
+     */
 
-  public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-    super.initialize(cordova, webView);
-    Log.v(TAG,"Init RfidCordovaPlugin");
-  }
+    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+        super.initialize(cordova, webView);
+        Log.v(TAG, "Init RfidCordovaPlugin");
+    }
 
-  public boolean execute(final String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-
-    final int duration = Toast.LENGTH_SHORT;
-    // Shows a toast
-    Log.i(TAG,"Rfid cordova plugin recieved action: "+ action);
+    public boolean execute(final String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        final int duration = Toast.LENGTH_SHORT;
+        Log.i(TAG, "Rfid cordova plugin recieved action: " + action);
 
 
-    cordova.getActivity().runOnUiThread(new Runnable() {
-      public void run() {
-        // Toast toast = Toast.makeText(cordova.getActivity().getApplicationContext(), action, duration);
-        // toast.show();
-        Log.i(TAG, "Inside runnable");
-        connectToReader();
-      }
-    });
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            public void run() {
+                // Toast toast = Toast.makeText(cordova.getActivity().getApplicationContext(), action, duration);
+                // toast.show();
+                Log.i(TAG, "Inside runnable");
+                connectToReader();
+            }
+        });
 
-    return true;
-  }
+        return true;
+    }
 
-  private void connectToReader() {
-      Log.i(TAG, "Connecting to reader");
+    private void connectToReader() {
+        Log.i(TAG, "Connecting to reader");
         try {
             Readers readers = new Readers();
             ArrayList<ReaderDevice> deviceArrayList = readers.GetAvailableRFIDReaderList();

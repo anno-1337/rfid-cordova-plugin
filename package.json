@@ -10,9 +10,8 @@
         "cordova",
         "rfid"
     ],
-    "platforms": [
+    "platforms":
         "android",
-    ],
     "engines": [],
     "englishdoc": ""
 }

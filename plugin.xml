@@ -27,4 +27,8 @@
     <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference" />
 
     <lib-file src="src/android/libs/RFIDAPI3Library.jar"/>
+
+    <config-file parent="/*" target="AndroidManifest.xml">
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+</config-file>
 </plugin>

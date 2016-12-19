@@ -1,4 +1,4 @@
-var exec = require('cordova/exec');
+let exec = require('cordova/exec');
 
 function RfidCordovaPlugin() {
  console.log("RfidCordovaPlugin.js: is created");
@@ -15,5 +15,5 @@ RfidCordovaPlugin.prototype.showToast = function(aString){
   },"RfidCordovaPlugin",aString,[]);
 }
 
- var RfidCordovaPlugin = new RfidCordovaPlugin();
+ let RfidCordovaPlugin = new RfidCordovaPlugin();
  module.exports = RfidCordovaPlugin;

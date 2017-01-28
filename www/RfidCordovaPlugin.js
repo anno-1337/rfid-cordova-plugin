@@ -15,5 +15,5 @@ RfidCordovaPlugin.prototype.showToast = function(aString){
   },"RfidCordovaPlugin",aString,[]);
 }
 
- let RfidCordovaPlugin = new RfidCordovaPlugin();
- module.exports = RfidCordovaPlugin;
+ let rfidCordovaPlugin = new RfidCordovaPlugin();
+ module.exports = rfidCordovaPlugin;

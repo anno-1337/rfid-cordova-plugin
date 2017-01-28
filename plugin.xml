@@ -24,7 +24,7 @@
         <source-file src="src/android/RfidCordovaPlugin.java" target-dir="src/" />
         <source-file src="src/android/libs/RFIDAPI3Library.jar" target-dir="libs/" />
     </platform>
-    <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference" />
+    <!-- <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference" /> -->
 
     <lib-file src="src/android/libs/RFIDAPI3Library.jar"/>
 

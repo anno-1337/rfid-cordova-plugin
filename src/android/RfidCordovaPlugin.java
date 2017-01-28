@@ -59,10 +59,10 @@ public class RfidCordovaPlugin extends CordovaPlugin {
 
         cordova.getActivity().runOnUiThread(new Runnable() {
             public void run() {
-                // Toast toast = Toast.makeText(cordova.getActivity().getApplicationContext(), action, duration);
-                // toast.show();
+                Toast toast = Toast.makeText(cordova.getActivity().getApplicationContext(), action, duration);
+                toast.show();
                 Log.i(TAG, "Inside runnable");
-                connectToReader();
+                // connectToReader();
             }
         });
 
